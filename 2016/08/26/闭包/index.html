@@ -47,8 +47,8 @@
 <p>function MyObject(name, message) {<br>  this.name = name.toString();<br>  this.message = message.toString();<br>}<br>MyObject.prototype = {<br>  getName: function() {<br>    return this.name;<br>  },<br>  getMessage: function() {<br>    return this.message;<br>  }<br>};<br>或者改成：</p>
 <p>function MyObject(name, message) {<br>  this.name = name.toString();<br>  this.message = message.toString();<br>}<br>MyObject.prototype.getName = function() {<br>  return this.name;<br>};<br>MyObject.prototype.getMessage = function() {<br>  return this.message;<br>};<br>在前面的两个示例中，继承的原型可以为所有对象共享，且不必在每一次创建对象时定义方法。参见 对象模型的细节 一章可以了解更为详细的信息。</p>
 </div><div class="tags"><a href="/tags/javascript/">javascript</a></div><div class="post-nav"><a class="pre" href="/2016/09/04/gitignore/">git忽略</a><a class="next" href="/2016/07/13/into-project-shell/">制作一个进入项目目录的小脚本</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=0.0.0"><script src="/js/gitment.browser.js?v=0.0.0"></script><script>var gitment = new Gitment({
-  owner: '金城的妖精见过米',
-  repo: 'https://racaly.me',
+  owner: '18939332',
+  repo: 'git@github.com:Racaly/gitment.git',
   oauth: {
     client_id: '49a2cd93abf46889f320',
     client_secret: 'd4221a79fad00f29bc04d6dc748be47468e36931',
