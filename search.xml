@@ -4,6 +4,26 @@
   
     
     <entry>
+      <title><![CDATA[事件委托]]></title>
+      <url>http://Racaly.coding.me/2018/02/03/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</url>
+      <content type="html"><![CDATA[<h3 id="什么是事件委托"><a href="#什么是事件委托" class="headerlink" title="什么是事件委托"></a>什么是事件委托</h3><p>事件委托也称事件代理，是指通过事件冒泡的原理，只指定一个事件处理程序，来管理同类型的的所有事件。如下html，如果不用事件委托，将每一个li都去添加click事件监听，非常麻烦。另外就是如果通过js动态创建的子节点，需要重新绑定事件。而利用事件委托的话，只需要给父级绑定一个事件监听，即可让每个li都绑定上相应的事件。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>如下html，点击每一个li，弹出其里面的text。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果不用事件委托，将需要为每一个li添加onclick事件或者为其添加click事件监听，假设li元素如果是动态的添加或者删除，你可能将不得不监听他们的新增或者删除事件。</p>
+<h3 id="为什么要使用事件委托"><a href="#为什么要使用事件委托" class="headerlink" title="为什么要使用事件委托"></a>为什么要使用事件委托</h3><p>在JavaScript中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能，因为需要不断的与dom节点进行交互，访问dom的次数越多，引起浏览器重绘与重排的次数也就越多，就会延长整个页面的交互就绪时间。如果要用事件委托，就会将所有的操作放到js程序里面，与dom的操作就只需要交互一次，这样就能大大的减少与dom的交互次数，提高性能。</p>
+<h3 id="事件委托的实现"><a href="#事件委托的实现" class="headerlink" title="事件委托的实现"></a>事件委托的实现</h3><p>依然是上面的例子，我们只需监听li的父级的click事件即可<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> ul =<span class="built_in">document</span>.getElementById(<span class="string">"wrap"</span>);</span><br><span class="line">	ul.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> target = e.target;</span><br><span class="line">		<span class="keyword">if</span>(target.nodeName.toLowerCase() == <span class="string">'li'</span>)&#123;</span><br><span class="line">			alert(target.innerHTML);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="target是什么"><a href="#target是什么" class="headerlink" title="target是什么"></a>target是什么</h3><p>Event对象提供了一个属性叫target，可以返回事件的目标节点（事件源），如生成事件的元素、文档或窗口。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Mac 终端命令大全]]></title>
       <url>http://Racaly.coding.me/2018/01/04/mac_terminal_command/</url>
       <content type="html"><![CDATA[<h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><table>
